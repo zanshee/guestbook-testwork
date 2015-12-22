@@ -3,6 +3,7 @@
 {% block title %}Guestbook{% endblock %}
 
 {% block body %}
+    <a href="{{ path('register') }}">Registration</a>
     {{ form(form) }}
     <hr>
     {% for message in list %}

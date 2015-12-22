@@ -1,0 +1,8 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {{ form(form) }}
+    <a href="{{ path('guestbook') }}"><< Back</a>
+{% endblock body %}
