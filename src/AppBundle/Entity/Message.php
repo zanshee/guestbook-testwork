@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Message
  *
  * @ORM\Table(name="message")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\MessageRepository")
  */
 class Message
 {
@@ -25,7 +25,7 @@ class Message
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255)
+     * @ORM\Column(name="username", type="string", length=255, nullable=true)
      * @Assert\NotBlank()
      */
     private $username;
@@ -33,7 +33,7 @@ class Message
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
      * @Assert\NotBlank()
      * @Assert\Email()
      */

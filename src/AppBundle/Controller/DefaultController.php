@@ -76,7 +76,12 @@ class DefaultController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $congrats = new Message();
+            $congrats->setContent('Приветствуем нового пользователя '.$user->getUsername());
+
             $em->persist($user);
+            $em->persist($congrats);
             $em->flush();
 
             return $this->redirectToRoute('guestbook');
@@ -86,4 +91,5 @@ class DefaultController extends Controller
             'form' => $form->createView(),
         ));
     }
+
 }

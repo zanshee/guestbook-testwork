@@ -8,9 +8,8 @@
     <hr>
     {% for message in list %}
         <div class="message">
-            <p>{{ message.id }}</p>
             <p>{{ message.content }}</p>
-            <p>{{ message.username }} <i>({{ message.email }})</i></p>
+            <p>{{ message.username }} <i>{{ message.email }}</i></p>
         </div>
     {% endfor %}
 {% endblock body %}
